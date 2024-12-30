@@ -1,7 +1,7 @@
 package com.cibanco.cinet.models.entity;
 
 import jakarta.persistence.*;
-        import lombok.Data;
+import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -14,14 +14,16 @@ public class PrivilegeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long oid;
 
+    @Column(name = "service_oid")
     private Long serviceOid;
-    private Integer versionNumber;
+
+    private Integer versionnumber;
     private String code;
     private String description;
     private Boolean signable;
-    private LocalDateTime modificationTime;
-    private String modificationUser;
-    private LocalDateTime creationTime;
+    private LocalDateTime modificationtime;
+    private String modificationuser;
+    private LocalDateTime creationtime;
 
     @OneToMany(mappedBy = "privilege")
     private Set<ProfilePrivilegeRelationEntity> privilegeProfiles;

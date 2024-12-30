@@ -1,9 +1,7 @@
 package com.cibanco.cinet.models.entity;
 
-
 import jakarta.persistence.*;
-        import lombok.Data;
-import org.springframework.context.annotation.Profile;
+import lombok.Data;
 
 @Entity
 @Table(name = "um_rel_profile_priv")
@@ -16,7 +14,7 @@ public class ProfilePrivilegeRelationEntity {
 
     @ManyToOne
     @JoinColumn(name = "um_profile_oid")
-    private Profile profile;
+    private ProfileEntity profile;
 
     @ManyToOne
     @JoinColumn(name = "um_privilege_oid")
